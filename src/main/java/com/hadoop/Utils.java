@@ -33,4 +33,19 @@ public class Utils {
 
         return values.toArray(new String[0]);
     }
+
+
+    /**
+     * @param point Point in form of <code> POINT (-93.10564100000002 41.320746)</code>
+     * @return Array of longitude and latitude
+     */
+    public static Double[] extractLocation(String point) { // POINT (-93.10564100000002 41.320746)
+        point = point.replaceAll("\\(","").replaceAll("\\)", ""); // POINT -93.10564100000002 41.320746
+        String[] data = point.split(" ");
+
+        double longitude = Double.parseDouble(data[1]);
+        double latitude = Double.parseDouble(data[2]);
+
+        return new Double[] {longitude, latitude};
+    }
 }
