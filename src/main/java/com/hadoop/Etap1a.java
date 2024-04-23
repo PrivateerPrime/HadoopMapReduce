@@ -23,7 +23,7 @@ public class Etap1a {
                            Mapper<Object, Text, Text, IntWritable>.Context context)
                 throws IOException, InterruptedException {
 
-            if (value.toString().startsWith("Inv")) {
+            if (value.toString().startsWith("Invoice")) {
                 return; //TODO Ugly, better exit strategy
             }
 
